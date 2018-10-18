@@ -91,7 +91,8 @@ public class WopiHostContrller {
      * @return
      * @throws UnsupportedEncodingException
      */
-    @GetMapping("/files/{name}")
+//    @GetMapping("/files/{name}")
+    @RequestMapping(value = "/files/{name}", method = {RequestMethod.GET, RequestMethod.POST})
     public void getFileInfo(HttpServletRequest request, HttpServletResponse response) {
         String uri = request.getRequestURI();
         FileInfo info = new FileInfo();
